@@ -66,7 +66,7 @@ For detailed instructions on the installation, refer to the [official Wazuh docu
      }
      ```
 
-### **Analysis of Yara BlackSuit ransomware rule: **
+### Analysis of Yara BlackSuit ransomware rule: 
 
 ### Strings
 Identifiable strings in BlackSuit ransomware executables include:

@@ -25,6 +25,20 @@ After setting the execution policy, run the provided fix script. Ensure the scri
 ```
 - Once the script has executed successfully, reboot the system to apply the changes.
 
+## How the Script Works
+1. Helper Functions:
+- Functions like ```Write-Info```, ```SetRegistry```, and ```SetSecEdit``` handle logging, registry updates, and policy configuration.
+- Error handling ensures proper execution, logging any failures.
+
+2. Execution List:
+- The ```$ExecutionList``` array specifies the sequence of actions, including creating a new admin account, renaming the default account, and applying configurations.
+
+3. Policy Changes:
+- Modifies security settings using the secedit tool, a Windows utility for exporting, editing, and applying security configurations.
+- Logs initial and final registry values for auditing and troubleshooting.
+
+4. Randomization for Security: Appends a random 4-digit number to the new Administrator account name for uniqueness and security.
+
 ## Verification
 After rebooting, the system should now comply with the CIS Benchmark requirement 2.3.1.5.
  
@@ -32,3 +46,5 @@ After rebooting, the system should now comply with the CIS Benchmark requirement
 
 ### Acknowledgments
 - The original large script was taken from https://github.com/eneerge/CIS-Windows-Server-2022
+
+
